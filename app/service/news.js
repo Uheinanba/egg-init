@@ -3,16 +3,17 @@
 const Service = require('egg').Service;
 
 class NewsService extends Service {
-  async list() {
-    const { data: newsList } = await this.ctx.curl(
-      'https://cnodejs.org/api/v1/topics',
-      {
-        dataType: 'json',
+  async list(page = 1) {
+    const { serverUrl } = this.config.news;
+
+    const { data: newsList } = await this.ctx.curl(`${serverUrl}/topics`, {
+      data: {
+        page: 2,
       },
-    );
-    return newsList.data.map(item => ({
-      title: item.title,
-    }));
+      dataType: 'json',
+    });
+
+    return newsList.data;
   }
 }
 
