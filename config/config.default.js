@@ -5,6 +5,12 @@ module.exports = appInfo => {
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + 'heimanba';
+
+  config.security = {
+    csrf: false,
+    ctoken: false,
+  };
+
   config.view = {
     defaultViewEngine: 'nunjucks',
     mapping: {
@@ -20,6 +26,13 @@ module.exports = appInfo => {
   config.robot = {
     ua: [/Baiduspider/i],
   };
+
+  /* config.session = {
+    key: 'EGG_SESS',
+    maxAge: 24 * 3600 * 1000, // 1 天
+    httpOnly: true,
+    encrypt: true,
+  }; */
 
   return config;
 };
