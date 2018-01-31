@@ -8,6 +8,7 @@
       {% for item in list %}
         <div class="item">
           <a href="{{ item.author.loginname }}">{{ item.title }}</a>
+          <p>{{item.create_at}}</p>
         </div>
       {% endfor %}
     </div>

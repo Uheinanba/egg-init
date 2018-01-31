@@ -16,7 +16,10 @@ module.exports = appInfo => {
     serverUrl: 'https://cnodejs.org/api/v1',
   };
   // add your config here
-  config.middleware = [];
+  config.middleware = ['robot'];
+  config.robot = {
+    ua: [/Baiduspider/i],
+  };
 
   return config;
 };

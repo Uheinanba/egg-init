@@ -1,5 +1,6 @@
 {
-  "extends": "eslint-config-egg",
+  "extends": ["eslint-config-egg", "prettier"],
+  "plugins": ["prettier"],
   "rules": {
     "comma-dangle": 0
   }
