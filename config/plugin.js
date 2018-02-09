@@ -1,6 +1,6 @@
 'use strict';
 
-const path = require('path');
+// const path = require('path');
 
 // had enabled by egg
 // exports.static = true;
@@ -9,7 +9,17 @@ exports.nunjucks = {
   package: 'egg-view-nunjucks',
 };
 
-exports.ua = {
+/* exports.ua = {
   enable: true,
   path: path.join(__dirname, '../lib/plugin/egg-ua'),
+}; */
+
+exports.mongoose = {
+  enable: true,
+  package: 'egg-mongoose',
+};
+
+exports.validate = {
+  enable: true,
+  package: 'egg-validate',
 };
